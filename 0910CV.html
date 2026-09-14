@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>张可馨个人简历</title>
+    <style>
+      :root {
+        --bg: #f8f3ee;
+        --panel: #fffdfb;
+        --header1: #3a2a23;
+        --header2: #7d5b47;
+        --accent: #c78d6a;
+        --accent-soft: #f2e3d7;
+        --text: #2f2a29;
+        --muted: #6a5d58;
+        --line: #eadfda;
+        --card: #fffaf7;
+        --shadow: 0 20px 40px rgba(76, 52, 40, 0.08);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f9f3ef 0%, #f3ece6 100%);
+        color: var(--text);
+      }
+
+      .resume {
+        max-width: 1180px;
+        margin: 40px auto;
+        background: var(--panel);
+        border: 1px solid rgba(122, 90, 75, 0.08);
+        box-shadow: var(--shadow);
+        border-radius: 26px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--header1) 0%, var(--header2) 100%);
+        color: #fff;
+        padding: 42px 48px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        font-size: 12px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        opacity: 0.8;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 3vw, 3.2rem);
+        font-weight: 700;
+      }
+
+      .subtitle {
+        margin: 10px 0 0;
+        font-size: 1.05rem;
+        opacity: 0.9;
+      }
+
+      .avatar {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.12);
+        border: 4px solid rgba(255,255,255,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        padding: 20px 48px 0;
+      }
+
+      .contact span {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 24px 48px 0;
+      }
+
+      .nav-tab {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .nav-tab:hover,
+      .nav-tab.active {
+        background: var(--header2);
+        color: #fff;
+        border-color: var(--header2);
+        box-shadow: 0 10px 20px rgba(125, 91, 71, 0.18);
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+        padding: 30px 48px 48px;
+      }
+
+      .sidebar,
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 20px;
+      }
+
+      .card h3 {
+        margin: 0 0 16px;
+        font-size: 1.12rem;
+        color: var(--text);
+      }
+
+      .profile p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .skill-list,
+      .info-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-list li {
+        display: inline-block;
+        background: var(--accent-soft);
+        color: var(--header2);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .info-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .info-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed var(--line);
+        color: var(--muted);
+      }
+
+      .info-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .info-list strong {
+        color: var(--text);
+      }
+
+      .project-tag-list {
+        list-style: none;
+        margin: 0 0 14px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .project-tag-list li {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--accent-soft);
+        color: var(--header2);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .project-bg p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .view {
+        display: none;
+        animation: fadeIn 0.35s ease;
+      }
+
+      .view.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-size: 1.42rem;
+        color: var(--text);
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .job {
+        position: relative;
+        padding-left: 18px;
+        border-left: 2px solid #efd8ca;
+      }
+
+      .job::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px rgba(199, 141, 106, 0.18);
+      }
+
+      .job-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .job h4 {
+        margin: 0;
+        font-size: 1.12rem;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .job ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .project {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 18px 16px;
+      }
+
+      .project h4 {
+        margin: 0 0 8px;
+        font-size: 1.03rem;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .metric {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px 18px;
+      }
+
+      .metric .value {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--header2);
+        margin-bottom: 8px;
+      }
+
+      .metric .label {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-item {
+        background: #f3e8df;
+        border: 1px solid rgba(125, 91, 71, 0.14);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 18px rgba(76, 52, 40, 0.04);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 22px rgba(76, 52, 40, 0.08);
+      }
+
+      .portfolio-item:nth-child(2n) {
+        background: #f0e6df;
+      }
+
+      .portfolio-visual {
+        height: 190px;
+        background: linear-gradient(135deg, rgba(199, 141, 106, 0.2), rgba(125, 91, 71, 0.08));
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.8rem;
+        color: rgba(96, 70, 58, 0.8);
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .portfolio-content {
+        padding: 18px 18px 20px;
+      }
+
+      .portfolio-content h4 {
+        margin: 0 0 10px;
+        font-size: 1.08rem;
+        line-height: 1.6;
+        color: var(--text);
+      }
+
+      .portfolio-content p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 0.96rem;
+      }
+
+      .detail-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .detail-grid.carousel-track {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        min-height: 360px;
+        border-radius: 16px;
+      }
+
+      .carousel-track .detail-card {
+        display: none;
+        width: 100%;
+        min-height: 360px;
+        border-radius: 16px;
+      }
+
+      .carousel-track .detail-card.active {
+        display: block;
+        animation: slideFade 0.45s ease;
+      }
+
+      .slideshow-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .slideshow-dots {
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+      }
+
+      .slideshow-dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #d7c2b6;
+        cursor: pointer;
+      }
+
+      .slideshow-dot.active {
+        background: var(--header2);
+        transform: scale(1.3);
+      }
+
+      @keyframes slideFade {
+        from { opacity: 0.35; transform: translateX(12px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      .detail-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .detail-summary,
+      .detail-meta {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+      }
+
+      .detail-summary p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .detail-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        gap: 8px;
+      }
+
+      .detail-tag {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f1e3da;
+        color: var(--header2);
+        font-size: 0.86rem;
+      }
+
+      .detail-card {
+        margin: 0;
+        min-height: 220px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #f6eee8;
+        cursor: zoom-in;
+      }
+
+      .detail-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+      }
+
+      .detail-card:hover img {
+        transform: scale(1.02);
+      }
+
+      .back-btn,
+      .viewer-control {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 14px;
+        background: var(--card);
+        color: var(--text);
+        cursor: pointer;
+        font: inherit;
+      }
+
+      .back-btn:hover,
+      .viewer-control:hover {
+        background: #f1e3da;
+      }
+
+      .image-viewer[hidden] {
+        display: none;
+      }
+
+      .image-viewer {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        background: rgba(31, 25, 23, 0.88);
+      }
+
+      .viewer-panel {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 16px;
+        width: min(100%, 1050px);
+      }
+
+      .viewer-stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: min(72vh, 720px);
+        overflow: hidden;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .viewer-stage img {
+        display: block;
+        max-width: 100%;
+        max-height: 72vh;
+        object-fit: contain;
+        transform-origin: center;
+        user-select: none;
+      }
+
+      .viewer-toolbar {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .viewer-control {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(31, 25, 23, 0.72);
+        color: white;
+      }
+
+      .viewer-caption {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        margin: 0;
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 640px) {
+        .detail-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-intro {
+          grid-template-columns: 1fr;
+        }
+
+        .image-viewer {
+          padding: 12px;
+        }
+
+        .viewer-panel {
+          grid-template-columns: auto minmax(0, 1fr) auto;
+          gap: 6px;
+        }
+      }
+
+      .profile-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .profile-copy {
+        padding-right: 8px;
+      }
+
+      .profile-copy h4 {
+        margin: 0 0 12px;
+        font-size: 1.12rem;
+      }
+
+      .profile-copy ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .profile-photo-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        align-content: start;
+      }
+
+      .photo-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: linear-gradient(135deg, #f5eee8, #eee3db);
+        min-height: 220px;
+        height: 220px;
+      }
+
+      .photo-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contact-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px 20px;
+      }
+
+      .contact-card p,
+      .contact-card a {
+        color: var(--muted);
+        line-height: 2;
+        text-decoration: none;
+      }
+
+      .cta {
+        display: inline-block;
+        margin-top: 12px;
+        background: var(--header2);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      @media (max-width: 860px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 18px;
+        }
+
+        .main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .resume {
+          margin: 20px 12px;
+          border-radius: 18px;
+        }
+
+        .header,
+        .contact,
+        .nav-tabs,
+        .main {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .overview-grid,
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+      <header class="header">
+        <div>
+          <p class="eyebrow">ART · TECHNOLOGY · BUSINESS</p>
+          <h1>张可馨</h1>
+          <p class="subtitle">服装与服饰设计 · 艺术科技与商业 · 文创项目运营</p>
+        </div>
+        <div class="avatar">张</div>
+      </header>
+
+      <section class="contact">
+        <span>📍 户籍：浙江省宁波市</span>
+        <span>📞 (+86) 180-5827-1580</span>
+        <span>✉️ 18058271580@163.com</span>
+        <span>🎂 出生年月：2004.01</span>
+      </section>
+
+      <nav class="nav-tabs" aria-label="简历导航">
+        <button class="nav-tab active" data-view="overview">首页</button>
+        <button class="nav-tab" data-view="profile">个人简介</button>
+        <button class="nav-tab" data-view="experience">经历</button>
+        <button class="nav-tab" data-view="projects">项目</button>
+        <button class="nav-tab" data-view="portfolio">作品集</button>
+        <button class="nav-tab" data-view="contact">联系</button>
+      </nav>
+
+      <div class="main">
+        <aside class="sidebar">
+          <section class="card profile">
+            <h3>个人简介</h3>
+            <p>
+              服装与服饰设计本科应届生，即将攻读香港岭南大学艺术科技与商业理学硕士。兼具服装实体设计、数字艺术科技与艺术商业运营能力，拥有服装设计、商业视觉设计、舞台演出服装统筹、文创创新创业四大板块实战经验。擅长以科技和商业双重视角推动艺术设计落地。
+            </p>
+          </section>
+
+          <section class="card">
+            <h3>核心能力</h3>
+            <ul class="skill-list">
+              <li>服装设计</li>
+              <li>立体裁剪</li>
+              <li>成衣制作</li>
+              <li>舞台服装统筹</li>
+              <li>文创研发</li>
+              <li>项目管理</li>
+              <li>PS</li>
+              <li>服装 CAD</li>
+              <li>AI 辅助绘图</li>
+              <li>品牌视觉</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h3>基本信息</h3>
+            <ul class="info-list">
+              <li><span>姓名</span><strong>张可馨</strong></li>
+              <li><span>学历</span><strong>本科 / 硕士拟入学</strong></li>
+              <li><span>专业</span><strong>服装设计 / 艺术科技与商业</strong></li>
+              <li><span>成绩</span><strong>GPA 3.7 · 专业 TOP5%</strong></li>
+              <li><span>证书</span><strong>英语四级 · 普通话二级 · C2</strong></li>
+            </ul>
+          </section>
+
+          <section class="card project-bg">
+            <h3>项目背景</h3>
+            <ul class="project-tag-list">
+              <li>文创研发</li>
+              <li>艺术科技</li>
+              <li>品牌创新</li>
+              <li>项目落地</li>
+              <li>跨界运营</li>
+              <li>青年消费</li>
+            </ul>
+            <p>
+              围绕“服装设计 + 艺术科技 + 文创商业”三位一体的创新方向，聚焦品牌叙事、产品孵化与传播落地，推动设计从概念表达走向真实项目实施与商业价值转化。
+            </p>
+          </section>
+        </aside>
+
+        <main class="content">
+          <section id="overview" class="view active">
+            <h3 class="section-title">简历概览</h3>
+            <div class="overview-grid">
+              <div class="metric">
+                <span class="value">5+</span>
+                <span class="label">核心项目经历</span>
+              </div>
+              <div class="metric">
+                <span class="value">3</span>
+                <span class="label">行业实习 / 实践方向</span>
+              </div>
+              <div class="metric">
+                <span class="value">GPA 3.7</span>
+                <span class="label">专业成绩表现</span>
+              </div>
+            </div>
+
+            <div class="timeline" style="margin-top: 20px;">
+              <article class="job">
+                <h4>设计定位</h4>
+                <ul>
+                  <li>聚焦服装与服饰设计、文创产品创新及艺术商业落地。</li>
+                  <li>兼顾视觉表达、项目执行、市场传播与品牌叙事。</li>
+                </ul>
+              </article>
+              <article class="job">
+                <h4>职业方向</h4>
+                <ul>
+                  <li>擅长将设计思维转化为项目成果，并推动其在品牌、活动和商业场景中的应用。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section id="profile" class="view">
+            <h3 class="section-title">个人简介</h3>
+            <div class="profile-layout">
+              <div class="profile-copy">
+                <article class="job">
+                  <h4>教育背景与能力画像</h4>
+                  <ul>
+                    <li>本科阶段主修服装与服饰设计，拥有扎实的版型、结构、工艺与成衣制作能力。</li>
+                    <li>同时延展艺术科技与商业思维，具备品牌视觉、项目策划、文创运营和跨界协作经验。</li>
+                    <li>擅长从概念设计到作品落地的完整链路，把设计转化为可执行项目。</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="profile-photo-grid">
+                <div class="photo-card">
+                  <img src="证件照.jpg" alt="证件照" />
+                </div>
+                <div class="photo-card">
+                  <img src="生活照.jpg" alt="生活照" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="experience" class="view">
+            <h3 class="section-title">教育背景</h3>
+            <div class="timeline">
+              <article class="job">
+                <div class="job-top">
+                  <h4>岭南大学</h4>
+                  <span class="meta">2026.08 - 2027.08</span>
+                </div>
+                <div class="meta">艺术科技与商业理学 · 硕士</div>
+                <ul>
+                  <li>主修中西方艺术史、艺术会计与财务、艺科融合、设计思维与创新。</li>
+                  <li>学习艺术金融和科技、互动艺术与科技、艺术机构项目管理等课程。</li>
+                </ul>
+              </article>
+              <article class="job">
+                <div class="job-top">
+                  <h4>大连艺术学院</h4>
+                  <span class="meta">2022.09 - 2026.06</span>
+                </div>
+                <div class="meta">服装与服饰设计 · 本科</div>
+                <ul>
+                  <li>综合成绩 GPA 3.7，专业排名 TOP5%；获学院奖学金、三好学生、优秀学生标兵。</li>
+                  <li>主修服装设计、女装设计、服装结构设计、立体裁剪、服装 CAD、PS/CDR 与服装市场营销。</li>
+                </ul>
+              </article>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 24px;">实习与实践经历</h3>
+            <div class="timeline">
+              <article class="job">
+                <div class="job-top">
+                  <h4>助理舞监</h4>
+                  <span class="meta">2025.06 - 2025.08</span>
+                </div>
+                <div class="meta">宁波市歌舞剧院有限公司</div>
+                <ul>
+                  <li>统筹 26 名演员、81 个角色服饰，跟进 30 余套演出服装定制，提前 7 天完成全员试装；建立 80 余件道具库存台账。</li>
+                  <li>对比 6 家供应商完成 15 类道具采购，迭代 5 次出场流程与舞台点位，道具复用率提升 30%。</li>
+                  <li>负责 16 场常规演出及 2 场首演现场统筹，全程无服装道具类演出事故。</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-top">
+                  <h4>主播实习生</h4>
+                  <span class="meta">2024.12 - 2025.01</span>
+                </div>
+                <div class="meta">CHIC.C STUDIO</div>
+                <ul>
+                  <li>结合季度趋势，日均完成 40 套以上服装搭配方案；为顾客提供一对一身形风格穿搭服务，促成 24+ 笔线下成交。</li>
+                  <li>每日完成 4 小时穿搭直播，单场商品点击量 3000+，助力直播间整体转化率提升 8%。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section id="projects" class="view">
+            <h3 class="section-title">项目经验</h3>
+            <div class="project-grid">
+              <article class="project">
+                <h4>毕业设计《她与百合的叙事诗》</h4>
+                <p>以花卉生长周期结合女性成长故事，完成系列概念、效果图、结构版型、面料选型及手工缝制，落地 4 套主题礼服与 4 套叙事配套帽饰。</p>
+              </article>
+
+              <article class="project">
+                <h4>原创音乐剧《渔光曲》演出项目</h4>
+                <p>负责演员服装档案、服装打样制作、道具采购与动线布局，建立物资管理体系，完成 16 场演出及 2 场首演，服装道具零重大故障。</p>
+              </article>
+
+              <article class="project">
+                <h4>女装休闲品牌创建实战</h4>
+                <p>负责 5 人小组分工、进度例会与风格统一，完成 20 套系列设计及 2 套成衣，课程评分第一，获评优秀设计师。</p>
+              </article>
+
+              <article class="project">
+                <h4>种子纸研发与教育推广大创项目</h4>
+                <p>主导种子纸材料研发与文创衍生品开发，创新“材料包 + 线上课程”研学商业模式，获省级优秀大学生创新创业项目及多项赛事奖项。</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="portfolio" class="view">
+            <h3 class="section-title">作品集</h3>
+            <div class="portfolio-grid">
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="lily" data-title="《她与百合的叙事诗》" data-description="以花卉生长、女性成长与叙事表达结合，打造一套具有剧情感与艺术性的礼服系列，强调女性成长叙事与材料语言的统一。" data-tags="毕业设计,服装设计,视觉叙事">
+                <div class="portfolio-visual">礼</div>
+                <div class="portfolio-content">
+                  <h4>《她与百合的叙事诗》</h4>
+                  <p>以花卉生长、女性成长与叙事表达结合，打造一套具有剧情感与艺术性的礼服系列，强调女性成长叙事与材料语言的统一。</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="fisher" data-title="《渔光曲》舞台服装统筹" data-description="负责角色服装档案、量体处理、定制跟进与舞台动线协同，确保演出全流程顺畅落地，并提升服装与舞台叙事的整体呈现。" data-tags="舞台服装,演出统筹,项目管理">
+                <div class="portfolio-visual">剧</div>
+                <div class="portfolio-content">
+                  <h4>《渔光曲》舞台服装统筹</h4>
+                  <p>负责角色服装档案、量体处理、定制跟进与舞台动线协同，确保演出全流程顺畅落地，并提升服装与舞台叙事的整体呈现。</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="brand" data-title="品牌创建实战" data-description="从品牌风格、系列概念到成衣落地，完成完整设计思路与产品输出，体现设计的商业落地能力与青年消费审美表达。" data-tags="品牌视觉,系列设计,商业落地">
+                <div class="portfolio-visual">创</div>
+                <div class="portfolio-content">
+                  <h4>品牌创建实战</h4>
+                  <p>从品牌风格、系列概念到成衣落地，完成完整设计思路与产品输出，体现设计的商业落地能力与青年消费审美表达。</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="seed" data-title="种子纸文创项目" data-description="围绕材料创新与教育传播，结合文创衍生品与课程内容，形成具有持续传播价值与教育意义的项目实践。" data-tags="材料创新,文创研发,教育推广">
+                <div class="portfolio-visual">纸</div>
+                <div class="portfolio-content">
+                  <h4>种子纸文创项目</h4>
+                  <p>围绕材料创新与教育传播，结合文创衍生品与课程内容，形成具有持续传播价值与教育意义的项目实践。</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="competition" data-title="比赛项目《花之叙事》" data-description="参与校内及区域设计赛事，围绕女性成长与自然生命循环展开创作，整合概念图、版型结构、造型表达与成衣展示，突出作品的叙事性与视觉冲击力。" data-tags="概念设计,服装造型,赛事创作">
+                <div class="portfolio-visual">赛</div>
+                <div class="portfolio-content">
+                  <h4>比赛项目《花之叙事》</h4>
+                  <p>参与校内及区域设计赛事，围绕女性成长与自然生命循环展开创作，整合概念图、版型结构、造型表达与成衣展示，突出作品的叙事性与视觉冲击力。</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item" data-view="portfolio-detail" data-project="handmade" data-title="实践制作项目《女装成衣系列》" data-description="完成从面料试验、结构打版到手工缝制的完整过程，制作多套小型成衣系列，强化版型控制、工艺执行与成衣可穿戴性，实现设计思路到实物呈现的闭环实践。" data-tags="面料实验,结构打版,成衣制作">
+                <div class="portfolio-visual">制</div>
+                <div class="portfolio-content">
+                  <h4>实践制作项目《女装成衣系列》</h4>
+                  <p>完成从面料试验、结构打版到手工缝制的完整过程，制作多套小型成衣系列，强化版型控制、工艺执行与成衣可穿戴性，实现设计思路到实物呈现的闭环实践。</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="portfolio-detail" class="view">
+            <div class="detail-header">
+              <h3 class="section-title detail-title">《她与百合的叙事诗》</h3>
+              <button class="back-btn" type="button">返回作品集</button>
+            </div>
+            <div class="detail-intro">
+              <div class="detail-summary">
+                <p class="detail-description">以花卉生长、女性成长与叙事表达结合，打造一套具有剧情感与艺术性的礼服系列，强调女性成长叙事与材料语言的统一。</p>
+              </div>
+              <div class="detail-meta" aria-label="项目标签">
+                <span class="detail-tag">毕业设计</span>
+                <span class="detail-tag">服装设计</span>
+                <span class="detail-tag">视觉叙事</span>
+              </div>
+            </div>
+            <div class="detail-grid"></div>
+            <div class="slideshow-controls" aria-label="项目图片轮播控制">
+              <button class="viewer-control slideshow-prev" type="button" aria-label="上一张">‹</button>
+              <div class="slideshow-dots"></div>
+              <button class="viewer-control slideshow-next" type="button" aria-label="下一张">›</button>
+            </div>
+          </section>
+
+          <div class="image-viewer" hidden role="dialog" aria-modal="true" aria-label="作品图片查看器">
+            <div class="viewer-panel">
+              <button class="viewer-control viewer-prev" type="button" aria-label="上一张">上一张</button>
+              <div class="viewer-stage">
+                <img class="viewer-image" alt="" />
+                <p class="viewer-caption"></p>
+                <div class="viewer-toolbar">
+                  <button class="viewer-control viewer-zoom-out" type="button" aria-label="缩小">−</button>
+                  <button class="viewer-control viewer-reset" type="button">重置</button>
+                  <button class="viewer-control viewer-zoom-in" type="button" aria-label="放大">+</button>
+                  <button class="viewer-control viewer-close" type="button">关闭</button>
+                </div>
+              </div>
+              <button class="viewer-control viewer-next" type="button" aria-label="下一张">下一张</button>
+            </div>
+          </div>
+
+          <section id="contact" class="view">
+            <h3 class="section-title">联系信息</h3>
+            <div class="contact-card">
+              <p>📍 户籍：浙江省宁波市</p>
+              <p>📞 (+86) 180-5827-1580</p>
+              <p>✉️ 18058271580@163.com</p>
+              <p>🎂 出生年月：2004.01</p>
+              <a class="cta" href="mailto:18058271580@163.com">发送邮件</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll('.nav-tab');
+      const views = document.querySelectorAll('.view');
+
+      function setView(target) {
+        tabs.forEach((tab) => {
+          tab.classList.toggle('active', tab.dataset.view === target);
+        });
+
+        views.forEach((view) => {
+          view.classList.toggle('active', view.id === target);
+        });
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, '', '#' + target);
+        }
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => setView(tab.dataset.view));
+      });
+
+      const detailTitle = document.querySelector('.detail-title');
+      const detailDescription = document.querySelector('.detail-description');
+      const detailMeta = document.querySelector('.detail-meta');
+      const detailGrid = document.querySelector('.detail-grid');
+      const projectGalleries = {
+        lily: [
+          { src: './百合/海报.png', alt: '海报' },
+          { src: './百合/门票.png', alt: '门票' },
+          { src: './百合/请柬.png', alt: '请柬' },
+          { src: './百合/作品.jpg', alt: '作品' }
+        ],
+        fisher: [
+          { src: './渔光曲/912b56ec4491d30b59e16f4a2ed01355.jpg', alt: '《渔光曲》演出现场合影' },
+          { src: './渔光曲/efac5bb092a00b169d8e32b4b336153d.jpg', alt: '《渔光曲》排练现场' },
+          { src: './渔光曲/fb539195548331afda265359b0e5b86d.jpg', alt: '《渔光曲》谢幕现场' },
+          { src: './渔光曲/fcc7c8afe564111dadb2948f981885b9.jpg', alt: '《渔光曲》舞台演出' }
+        ],
+        brand: [
+          { src: './品牌创建/ChatGPT Image 2026年9月14日 16_08_27.png', alt: '品牌秀场展示' },
+          { src: './品牌创建/7fe13492e0a14eb6859a5bff17df2029.jpg', alt: '品牌风格情绪板' },
+          { src: './品牌创建/7dbf86e2a16f41a7f2be353609019c92.jpg', alt: '品牌现场执行' },
+          { src: './品牌创建/7c2d034611bb051cbaa5d5ea6f77114c.jpg', alt: '品牌系列设计' },
+          { src: './品牌创建/6ceafa9b2199540ebc481bbeea1d2c72.jpg', alt: '品牌展览现场' },
+          { src: './品牌创建/655dac73be2073c10461206ef11aced4.jpg', alt: '品牌活动合影' },
+          { src: './品牌创建/063ce38c7fa3a02af4447e6cd5a85798.jpg', alt: '品牌造型记录' },
+          { src: './品牌创建/c7870d6d0a44bd3ff3d18e5e212e0faf.jpg', alt: '品牌成衣系列' }
+        ],
+        seed: [
+          { src: './种子纸/slide-1.png', alt: '种子纸项目概览' },
+          { src: './种子纸/slide-2.png', alt: '种子纸品牌与文创设计' },
+          { src: './种子纸/slide-3.png', alt: '种子纸制作过程' },
+          { src: './种子纸/slide-4.png', alt: '本科农耕园实践' },
+          { src: './种子纸/slide-5.png', alt: '项目证书与获奖成果' },
+          { src: './种子纸/slide-6.png', alt: '金银花 IP 与文创设计' }
+        ],
+        handmade: [
+          { src: './手工/ChatGPT Image 2026年9月14日 17_25_00.png', alt: '手工礼服系列' },
+          { src: './手工/ChatGPT Image 2026年9月14日 17_21_12.png', alt: '立裁设计过程' },
+          { src: './手工/ChatGPT Image 2026年9月14日 17_17_09.png', alt: '立裁结构展示' },
+          { src: './手工/ChatGPT Image 2026年9月14日 17_08_22.png', alt: '礼服立裁作品' },
+          { src: './手工/ChatGPT Image 2026年9月14日 17_03_22.png', alt: '手工礼服制作' },
+          { src: './手工/ChatGPT Image 2026年9月14日 16_59_38.png', alt: '女式西装制作' },
+          { src: './手工/ChatGPT Image 2026年9月14日 16_52_05.png', alt: '手工钩织作品' },
+          { src: './手工/1a7b0ce37f4ef8dcc7f7341e4b08f1d2.jpg', alt: '插画设计与细节展示' }
+        ],
+        competition: [
+          { src: './比赛/1.jpg', alt: '《花之叙事》系列设计一' },
+          { src: './比赛/2.jpg', alt: '《花之叙事》系列设计二' },
+          { src: './比赛/3.jpg', alt: '《花之叙事》系列设计三' },
+          { src: './比赛/4.jpg', alt: '《花之叙事》系列设计四' },
+          { src: './比赛/5.jpg', alt: '《花之叙事》系列设计五' },
+          { src: './比赛/6.jpg', alt: '《花之叙事》系列设计六' },
+          { src: './比赛/7.jpg', alt: '《花之叙事》系列设计七' },
+          { src: './比赛/8.jpg', alt: '《花之叙事》系列设计八' },
+          { src: './比赛/9.jpg', alt: '《花之叙事》系列设计九' }
+        ]
+      };
+
+      let detailCards = [];
+      let carouselTimer;
+      let carouselIndex = 0;
+      const slideshowDots = document.querySelector('.slideshow-dots');
+
+      function updateCarousel(index) {
+        if (!detailCards.length) return;
+        carouselIndex = (index + detailCards.length) % detailCards.length;
+        detailCards.forEach((card, cardIndex) => {
+          card.classList.toggle('active', cardIndex === carouselIndex);
+        });
+        slideshowDots.querySelectorAll('.slideshow-dot').forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === carouselIndex);
+        });
+      }
+
+      function stopCarousel() {
+        window.clearInterval(carouselTimer);
+      }
+
+      function startCarousel() {
+        stopCarousel();
+        if (detailCards.length < 2) return;
+        carouselTimer = window.setInterval(() => {
+          updateCarousel(carouselIndex + 1);
+        }, 3200);
+      }
+
+      function renderDetailGallery(project) {
+        const gallery = projectGalleries[project] || projectGalleries.lily;
+        stopCarousel();
+        carouselIndex = 0;
+        detailGrid.classList.add('carousel-track');
+        detailGrid.innerHTML = gallery.map((image) => `
+          <figure class="detail-card" tabindex="0">
+            <img src="${image.src}" alt="${image.alt}" />
+          </figure>
+        `).join('');
+        detailCards = [...detailGrid.querySelectorAll('.detail-card')];
+        slideshowDots.innerHTML = gallery.map((image, index) => `
+          <button class="slideshow-dot${index === 0 ? ' active' : ''}" type="button" aria-label="查看第 ${index + 1} 张图片"></button>
+        `).join('');
+        slideshowDots.querySelectorAll('.slideshow-dot').forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            updateCarousel(index);
+            startCarousel();
+          });
+        });
+        detailCards.forEach((card, index) => {
+          card.addEventListener('click', () => openViewer(index));
+          card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openViewer(index);
+            }
+          });
+        });
+        updateCarousel(0);
+        startCarousel();
+      }
+
+      document.querySelectorAll('.portfolio-item[data-view="portfolio-detail"]').forEach((item) => {
+        item.addEventListener('click', () => {
+          detailTitle.textContent = item.dataset.title || '作品详情';
+          detailDescription.textContent = item.dataset.description || '';
+          detailMeta.innerHTML = (item.dataset.tags || '').split(',').filter(Boolean).map((tag) => `<span class="detail-tag">${tag}</span>`).join('');
+          renderDetailGallery(item.dataset.project);
+          setView('portfolio-detail');
+        });
+      });
+
+      document.querySelector('.back-btn')?.addEventListener('click', () => setView('portfolio'));
+
+      const viewer = document.querySelector('.image-viewer');
+      const viewerImage = document.querySelector('.viewer-image');
+      const viewerCaption = document.querySelector('.viewer-caption');
+      let currentImage = 0;
+      let zoom = 1;
+
+      function renderViewerImage() {
+        const image = detailCards[currentImage].querySelector('img');
+        viewerImage.src = image.src;
+        viewerImage.alt = image.alt;
+        viewerCaption.textContent = `${image.alt} ${currentImage + 1} / ${detailCards.length}`;
+        viewerImage.style.transform = `scale(${zoom})`;
+      }
+
+      function openViewer(index) {
+        currentImage = index;
+        zoom = 1;
+        renderViewerImage();
+        viewer.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeViewer() {
+        viewer.hidden = true;
+        document.body.style.overflow = '';
+      }
+
+      function moveViewer(step) {
+        currentImage = (currentImage + step + detailCards.length) % detailCards.length;
+        zoom = 1;
+        renderViewerImage();
+      }
+
+      renderDetailGallery('lily');
+      document.querySelector('.slideshow-prev')?.addEventListener('click', () => {
+        updateCarousel(carouselIndex - 1);
+        startCarousel();
+      });
+      document.querySelector('.slideshow-next')?.addEventListener('click', () => {
+        updateCarousel(carouselIndex + 1);
+        startCarousel();
+      });
+      detailGrid.addEventListener('mouseenter', stopCarousel);
+      detailGrid.addEventListener('mouseleave', startCarousel);
+      detailGrid.addEventListener('touchstart', stopCarousel, { passive: true });
+      detailGrid.addEventListener('touchend', startCarousel, { passive: true });
+
+      document.querySelector('.viewer-close')?.addEventListener('click', closeViewer);
+      document.querySelector('.viewer-prev')?.addEventListener('click', () => moveViewer(-1));
+      document.querySelector('.viewer-next')?.addEventListener('click', () => moveViewer(1));
+      document.querySelector('.viewer-zoom-in')?.addEventListener('click', () => {
+        zoom = Math.min(zoom + 0.25, 3);
+        renderViewerImage();
+      });
+      document.querySelector('.viewer-zoom-out')?.addEventListener('click', () => {
+        zoom = Math.max(zoom - 0.25, 0.5);
+        renderViewerImage();
+      });
+      document.querySelector('.viewer-reset')?.addEventListener('click', () => {
+        zoom = 1;
+        renderViewerImage();
+      });
+      document.querySelector('.viewer-stage')?.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        zoom = Math.min(Math.max(zoom + (event.deltaY < 0 ? 0.1 : -0.1), 0.5), 3);
+        renderViewerImage();
+      }, { passive: false });
+      viewer?.addEventListener('click', (event) => {
+        if (event.target === viewer) closeViewer();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (viewer?.hidden) return;
+        if (event.key === 'Escape') closeViewer();
+        if (event.key === 'ArrowLeft') moveViewer(-1);
+        if (event.key === 'ArrowRight') moveViewer(1);
+      });
+
+      const initialHash = location.hash.replace('#', '');
+      if (initialHash && document.getElementById(initialHash)) {
+        setView(initialHash);
+      }
+    </script>
+  </body>
+</html>
