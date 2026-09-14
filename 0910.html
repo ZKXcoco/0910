@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>张可馨个人简历</title>
+    <style>
+      :root {
+        --bg: #f8f3ee;
+        --panel: #fffdfb;
+        --header1: #3a2a23;
+        --header2: #7d5b47;
+        --accent: #c78d6a;
+        --accent-soft: #f2e3d7;
+        --text: #2f2a29;
+        --muted: #6a5d58;
+        --line: #eadfda;
+        --card: #fffaf7;
+        --shadow: 0 20px 40px rgba(76, 52, 40, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #f9f3ef 0%, #f3ece6 100%);
+        color: var(--text);
+      }
+
+      .resume {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: var(--panel);
+        border: 1px solid rgba(122, 90, 75, 0.08);
+        box-shadow: var(--shadow);
+        border-radius: 26px;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--header1) 0%, var(--header2) 100%);
+        color: #fff;
+        padding: 42px 48px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        font-size: 12px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        opacity: 0.8;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 3vw, 3.2rem);
+        font-weight: 700;
+      }
+
+      .subtitle {
+        margin: 10px 0 0;
+        font-size: 1.05rem;
+        opacity: 0.9;
+      }
+
+      .avatar {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.12);
+        border: 4px solid rgba(255,255,255,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        padding: 20px 48px 0;
+      }
+
+      .contact span {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+        padding: 30px 48px 48px;
+      }
+
+      .sidebar,
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 20px;
+      }
+
+      .card h3 {
+        margin: 0 0 16px;
+        font-size: 1.12rem;
+        color: var(--text);
+      }
+
+      .profile p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+      }
+
+      .skill-list,
+      .info-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-list li {
+        display: inline-block;
+        background: var(--accent-soft);
+        color: var(--header2);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .info-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .info-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed var(--line);
+        color: var(--muted);
+      }
+
+      .info-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .info-list strong {
+        color: var(--text);
+      }
+
+      .project-tag-list {
+        list-style: none;
+        margin: 0 0 14px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .project-tag-list li {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--accent-soft);
+        color: var(--header2);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .project-bg p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-size: 1.42rem;
+        color: var(--text);
+      }
+
+      .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .job {
+        position: relative;
+        padding-left: 18px;
+        border-left: 2px solid #efd8ca;
+      }
+
+      .job::before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px rgba(199, 141, 106, 0.18);
+      }
+
+      .job-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .job h4 {
+        margin: 0;
+        font-size: 1.12rem;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .job ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .project {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 18px 16px;
+      }
+
+      .project h4 {
+        margin: 0 0 8px;
+        font-size: 1.03rem;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      @media (max-width: 860px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 18px;
+        }
+
+        .main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .resume {
+          margin: 20px 12px;
+          border-radius: 18px;
+        }
+
+        .header,
+        .contact,
+        .main {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+      <header class="header">
+        <div>
+          <p class="eyebrow">ART · TECHNOLOGY · BUSINESS</p>
+          <h1>张可馨</h1>
+          <p class="subtitle">服装与服饰设计 · 艺术科技与商业 · 文创项目运营</p>
+        </div>
+        <div class="avatar">张</div>
+      </header>
+
+      <section class="contact">
+        <span>📍 户籍：浙江省宁波市</span>
+        <span>📞 (+86) 180-5827-1580</span>
+        <span>✉️ 18058271580@163.com</span>
+        <span>🎂 出生年月：2004.01</span>
+      </section>
+
+      <div class="main">
+        <aside class="sidebar">
+          <section class="card profile">
+            <h3>个人简介</h3>
+            <p>
+              服装与服饰设计本科应届生，即将攻读香港岭南大学艺术科技与商业理学硕士。兼具服装实体设计、数字艺术科技与艺术商业运营能力，拥有服装设计、商业视觉设计、舞台演出服装统筹、文创创新创业四大板块实战经验。擅长以科技和商业双重视角推动艺术设计落地。
+            </p>
+          </section>
+
+          <section class="card">
+            <h3>核心能力</h3>
+            <ul class="skill-list">
+              <li>服装设计</li>
+              <li>立体裁剪</li>
+              <li>成衣制作</li>
+              <li>舞台服装统筹</li>
+              <li>文创研发</li>
+              <li>项目管理</li>
+              <li>PS</li>
+              <li>服装 CAD</li>
+              <li>AI 辅助绘图</li>
+              <li>品牌视觉</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h3>基本信息</h3>
+            <ul class="info-list">
+              <li><span>姓名</span><strong>张可馨</strong></li>
+              <li><span>学历</span><strong>本科 / 硕士拟入学</strong></li>
+              <li><span>专业</span><strong>服装设计 / 艺术科技与商业</strong></li>
+              <li><span>成绩</span><strong>GPA 3.7 · 专业 TOP5%</strong></li>
+              <li><span>证书</span><strong>英语四级 · 普通话二级 · C2</strong></li>
+            </ul>
+          </section>
+
+          <section class="card project-bg">
+            <h3>项目背景</h3>
+            <ul class="project-tag-list">
+              <li>文创研发</li>
+              <li>艺术科技</li>
+              <li>品牌创新</li>
+              <li>项目落地</li>
+              <li>跨界运营</li>
+              <li>青年消费</li>
+            </ul>
+            <p>
+              围绕“服装设计 + 艺术科技 + 文创商业”三位一体的创新方向，聚焦品牌叙事、产品孵化与传播落地，推动设计从概念表达走向真实项目实施与商业价值转化。
+            </p>
+          </section>
+        </aside>
+
+        <main class="content">
+          <section>
+            <h3 class="section-title">教育背景</h3>
+            <div class="timeline">
+              <article class="job">
+                <div class="job-top">
+                  <h4>岭南大学</h4>
+                  <span class="meta">2026.08 - 2027.08</span>
+                </div>
+                <div class="meta">艺术科技与商业理学 · 硕士</div>
+                <ul>
+                  <li>主修中西方艺术史、艺术会计与财务、艺科融合、设计思维与创新。</li>
+                  <li>学习艺术金融和科技、互动艺术与科技、艺术机构项目管理等课程。</li>
+                </ul>
+              </article>
+              <article class="job">
+                <div class="job-top">
+                  <h4>大连艺术学院</h4>
+                  <span class="meta">2022.09 - 2026.06</span>
+                </div>
+                <div class="meta">服装与服饰设计 · 本科</div>
+                <ul>
+                  <li>综合成绩 GPA 3.7，专业排名 TOP5%；获学院奖学金、三好学生、优秀学生标兵。</li>
+                  <li>主修服装设计、女装设计、服装结构设计、立体裁剪、服装 CAD、PS/CDR 与服装市场营销。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="section-title">实习与实践经历</h3>
+            <div class="timeline">
+              <article class="job">
+                <div class="job-top">
+                  <h4>助理舞监</h4>
+                  <span class="meta">2025.06 - 2025.08</span>
+                </div>
+                <div class="meta">宁波市歌舞剧院有限公司</div>
+                <ul>
+                  <li>统筹 26 名演员、81 个角色服饰，跟进 30 余套演出服装定制，提前 7 天完成全员试装；建立 80 余件道具库存台账。</li>
+                  <li>对比 6 家供应商完成 15 类道具采购，迭代 5 次出场流程与舞台点位，道具复用率提升 30%。</li>
+                  <li>负责 16 场常规演出及 2 场首演现场统筹，全程无服装道具类演出事故。</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-top">
+                  <h4>主播实习生</h4>
+                  <span class="meta">2024.12 - 2025.01</span>
+                </div>
+                <div class="meta">CHIC.C STUDIO</div>
+                <ul>
+                  <li>结合季度趋势，日均完成 40 套以上服装搭配方案；为顾客提供一对一身形风格穿搭服务，促成 24+ 笔线下成交。</li>
+                  <li>每日完成 4 小时穿搭直播，单场商品点击量 3000+，助力直播间整体转化率提升 8%。</li>
+                </ul>
+              </article>
+              <article class="job">
+                <div class="job-top">
+                  <h4>设计部实习生</h4>
+                  <span class="meta">2024.06 - 2024.08</span>
+                </div>
+                <div class="meta">宁波宏涛数字印刷有限公司</div>
+                <ul>
+                  <li>使用 PS、AI 处理视觉素材，梳理 80+ 份设计文件并建立校验规范，设计效率提升 50%。</li>
+                  <li>参与 15 项品牌、校园、党建类设计项目，独立输出 55 版以上初稿，全部落地印刷与工程应用。</li>
+                  <li>对接 20 家客户，推动 6 个重点项目零偏差交付，客户满意度 95%，5 家客户产生复购。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="section-title">项目经验</h3>
+            <div class="project-grid">
+              <article class="project">
+                <h4>毕业设计《她与百合的叙事诗》</h4>
+                <p>
+                  以花卉生长周期结合女性成长故事，完成系列概念、效果图、结构版型、面料选型及手工缝制，落地 4 套主题礼服与 4 套叙事配套帽饰。
+                </p>
+              </article>
+
+              <article class="project">
+                <h4>原创音乐剧《渔光曲》演出项目</h4>
+                <p>
+                  负责演员服装档案、服装打样制作、道具采购与动线布局，建立物资管理体系，完成 16 场演出及 2 场首演，服装道具零重大故障。
+                </p>
+              </article>
+
+              <article class="project">
+                <h4>女装休闲品牌创建实战</h4>
+                <p>
+                  负责 5 人小组分工、进度例会与风格统一，完成 20 套系列设计及 2 套成衣，课程评分第一，获评优秀设计师。
+                </p>
+              </article>
+
+              <article class="project">
+                <h4>种子纸研发与教育推广大创项目</h4>
+                <p>
+                  主导种子纸材料研发与文创衍生品开发，创新“材料包 + 线上课程”研学商业模式，获省级优秀大学生创新创业项目及多项赛事奖项。
+                </p>
+              </article>
+
+              <article class="project">
+                <h4>大连艺术学院三期酒店软装工程</h4>
+                <p>驻场跟进 500㎡软装区域，巡检 15 处点位、调整陈列 50 余次，制定三重质检标准，项目一次性通过校方验收。</p>
+              </article>
+
+              <article class="project">
+                <h4>服装学院学生会宣传部副部长</h4>
+                <p>管理 9 人宣传团队，落地 8 场校园活动宣传，制作 15 张海报并撰写 5000+ 字文案，活动到场参与率提升 20%。</p>
+              </article>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="section-title">获奖与证书</h3>
+            <div class="timeline">
+              <article class="job">
+                <ul>
+                  <li>新发现纽约时装周中国区设计大赛优秀设计师奖（2024）</li>
+                  <li>辽宁省 ICAN 创新创业大赛省级三等奖（2024）</li>
+                  <li>“农作纸文化”智慧新农艺研学项目策划大赛银奖（2023）</li>
+                  <li>省级优秀大学生创新创业项目（2023）及“阅读与美”优秀设计师奖（2024）</li>
+                  <li>熟练使用 PS、服装 CAD；掌握 AI 辅助绘图、Word/Excel/PPT 全系列办公软件。</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
